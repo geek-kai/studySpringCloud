@@ -17,6 +17,8 @@
         <module>eureka-client</module>
         <module>eureka-feign-client</module>
         <module>eureka-zuul</module>
+        <module>eureka-zipkin-service</module>
+        <module>eureka-user-service</module>
     </modules>
     <packaging>pom</packaging>
     <properties>

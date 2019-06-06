@@ -1,6 +1,9 @@
 package com.spring.cloud.client.function.controller;
 
+import com.spring.cloud.client.function.param.UserParam;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,9 +17,10 @@ public class HelloController {
     @Value("${server.port}")
     private String port;
 
-    @RequestMapping("hello")
-    public String hello(String name) {
-        return "hello:" + name + "port:" + port;
+    @PostMapping("hello")
+    public String hello(@RequestBody UserParam user) {
+
+        return "hello:" + user.getName() + "port:" + port;
     }
 
 }
